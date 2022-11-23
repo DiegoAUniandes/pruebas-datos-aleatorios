@@ -3,13 +3,13 @@ import PagePage from "../PageObject/PagePage"
 import {Utility} from "../PageObject/Utility"
 import {IStrategy} from '../support/strategy/i-strategy' 
 import { StrategyFactory } from "../support/strategy/strategy-factory";
-let strategy: IStrategy;
 require('@cypress/xpath');
 
-describe("Cypress POM Test Suite", function () {
 
-    beforeEach(() => {  
-        strategy = StrategyFactory.getStrategy();
+describe("Cypress POM Test Suite", function () {
+    let strategy: IStrategy;
+    beforeEach(async () => {  
+        strategy = await StrategyFactory.getStrategy();
         cy.log('I run before every test in every spec file!!!!!!');
       })
 

@@ -4,17 +4,19 @@ import { IStrategy } from "./i-strategy"
 import { OnlineStrategy } from "./online-strategy"
 
 export class StrategyFactory {
-    static createObject(someProperty: string): IStrategy{
+    static async createObject(someProperty: string): Promise<IStrategy>{
         if (someProperty === 'strategy1') {
             return new DataPoolAprioriStrategy()
         } else if (someProperty === 'strategy2') {
-            return new DataPoolOnlineStategy()
+            let strategy = new DataPoolOnlineStategy()
+            await strategy.loadData()
+            return <IStrategy>strategy
         } else {
             return new OnlineStrategy()
         }
     }
 
-    static getStrategy(){
-        return this.createObject('strategy1');
+    static async getStrategy() {
+        return await this.createObject('strategy2');
     }
 }

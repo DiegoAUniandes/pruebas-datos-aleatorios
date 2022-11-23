@@ -6,4 +6,5 @@ export interface IStrategy{
     getEmail:() => string;
     getNumber:() => number;
     getTagName:() => string;
+    getNaughtyString:() => string;
 }

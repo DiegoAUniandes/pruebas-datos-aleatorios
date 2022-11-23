@@ -11,5 +11,6 @@ export class OnlineStrategy implements IStrategy{
     getEmail: () => "getEmail";
     getNumber: () => 1
     getTagName: () => "getTagName";
+    getNaughtyString: () => "getNaughtyString";
     
 }
