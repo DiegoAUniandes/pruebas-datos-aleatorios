@@ -1,0 +1,29 @@
+{
+  "name": "pruebas-datos-aleatorios",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cypress.config.js",
+  "dependencies": {
+    "cypress": "^11.2.0",
+    "@cypress/xpath": "^2.0.3",
+    "typescript": "^4.9.3"
+  },
+  "devDependencies": {
+    "cypress": "^11.2.0",
+    "@cypress/xpath": "^2.0.3",
+    "typescript": "^4.9.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiegoAUniandes/pruebas-datos-aleatorios.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DiegoAUniandes/pruebas-datos-aleatorios/issues"
+  },
+  "homepage": "https://github.com/DiegoAUniandes/pruebas-datos-aleatorios#readme"
+}
