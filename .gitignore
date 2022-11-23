@@ -105,3 +105,5 @@ dist
 
 # Otros
 .idea
+cypress/videos
+cypress/screenshots
