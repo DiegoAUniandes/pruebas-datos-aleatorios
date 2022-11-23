@@ -13,7 +13,7 @@ Diego Alejandro Ramírez - da.ramirez55@uniandes.edu.co
 
 [Versiones de software requeridas](#versiones-de-software-requeridos-para-la-ejecución-de-los-proyectos)<br>
 [Estructura del proyecto](#estructura-del-proyecto)<br>
-[Instrucciones para ejecución](#instrucciones-para-ejecución-del-proyecto-semana-6)<br>
+[Instrucciones para ejecución](#instrucciones-para-ejecución-del-proyecto)<br>
 [Descripción de funcionalidades](#funcionalidades)<br>
 [Descripción de escenarios de pruebas](#escenarios-de-pruebas) <br>
 [Estrategias de pruebas modificadas](#estrategias-de-pruebas-modificadas)
