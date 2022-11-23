@@ -9,8 +9,8 @@ require('@cypress/xpath');
 describe("Cypress POM Test Suite", function () {
 
     beforeEach(() => {  
-        strategy = StrategyFactory.createObject('strategy1')
-        cy.log('I run before every test in every spec file!!!!!!')
+        strategy = StrategyFactory.getStrategy();
+        cy.log('I run before every test in every spec file!!!!!!');
       })
 
     it("Edit and publish a page", function () {

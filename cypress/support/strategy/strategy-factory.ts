@@ -13,4 +13,8 @@ export class StrategyFactory {
             return new OnlineStrategy()
         }
     }
+
+    static getStrategy(){
+        return this.createObject('strategy1');
+    }
 }
