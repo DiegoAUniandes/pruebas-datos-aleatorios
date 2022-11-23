@@ -33,12 +33,12 @@ Windows: Windows 11 Home Single Language 22H2 64 bits <br>
 ├── cypress <br>
 ├── estrategias-pruebas
 
-## Instrucciones para ejecución del proyecto (semana 6)
+## Instrucciones para ejecución del proyecto
 Dado que la ejecución del proyecto completo para la semana 6 requiere múltiples comandos en diferentes carpetas, se creó un script (`script.py`) en Python que ejecuta por el usuario todos los comandos requeridos.
 
 Siga los siguientes pasos para ejecutar el proyecto: <br>
-* Clonar el repositorio con el comando: `git clone https://github.com/luissanta/ghost-test.git`
-* Navegar a la raíz del repositorio: `cd ghost-test`
+* Clonar el repositorio con el comando: `https://github.com/DiegoAUniandes/pruebas-datos-aleatorios.git`
+* Navegar a la raíz del repositorio: `cd pruebas-datos-aleatorios`
 * Ejecutar el script de lanzamiento de todas las pruebas del proyecto: `python3 script.py`. Esta ejecución suele tomar algo más de 15 minutos, por favor no cancele el proceso.
 
 
