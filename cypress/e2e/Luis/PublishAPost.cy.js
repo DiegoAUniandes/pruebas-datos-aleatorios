@@ -1,6 +1,6 @@
-import LoginPage from '../PageObject/LoginPage'
-import CreatePostPage from '../PageObject/CreatePostPage'
-import LandingPage from '../PageObject/LandingPage'
+import LoginPage from '../../PageObject/LoginPage'
+import CreatePostPage from '../../PageObject/CreatePostPage'
+import LandingPage from '../../PageObject/LandingPage'
 
 let config = require('../../config.json')
 
