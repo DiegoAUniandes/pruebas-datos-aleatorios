@@ -1,22 +1,24 @@
 import { DataPoolAprioriStrategy } from "./data-pool-apriori-strategy"
-import { DataPoolOnlineStategy } from "./data-pool-online-strategy"
+import { DataPoolOnlineStrategy } from "./data-pool-online-strategy"
 import { IStrategy } from "./i-strategy"
 import { OnlineStrategy } from "./online-strategy"
+let config = require('../../tsconfig.json')
 
 export class StrategyFactory {
-    static async createObject(someProperty: string): Promise<IStrategy>{
-        if (someProperty === 'strategy1') {
-            return new DataPoolAprioriStrategy()
-        } else if (someProperty === 'strategy2') {
-            let strategy = new DataPoolOnlineStategy()
-            await strategy.loadData()
-            return <IStrategy>strategy
-        } else {
-            return new OnlineStrategy()
+    static async createObject(strategy: number): Promise<IStrategy>{
+        switch (strategy) {
+            case 1:
+                return new DataPoolAprioriStrategy()
+            case 2:
+                let dataPoolOnlineStrategy = new DataPoolOnlineStrategy()
+                await dataPoolOnlineStrategy.loadData()
+                return <IStrategy>dataPoolOnlineStrategy
+            case 3:
+                return new OnlineStrategy()
         }
     }
 
     static async getStrategy() {
-        return await this.createObject('strategy2');
+        return await this.createObject(config.strategy);
     }
 }

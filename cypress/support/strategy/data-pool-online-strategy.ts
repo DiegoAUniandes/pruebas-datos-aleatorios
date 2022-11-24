@@ -1,9 +1,9 @@
 import { IStrategy } from "./i-strategy";
 const planBdatapool = require("./datapoolonline.json");
-export class DataPoolOnlineStategy implements IStrategy{
+export class DataPoolOnlineStrategy implements IStrategy{
     datapoolonline: any = "";
 
-    getShortString():string {         
+    getShortString():string {
         return this.datapoolonline.getShortString;
     }
     getLargeString():string {
@@ -36,16 +36,16 @@ export class DataPoolOnlineStategy implements IStrategy{
                 if (!response.ok) {
                     throw new Error(response.statusText)
                   }
-                this.datapoolonline = response;   
-                return response;           
-            }).catch(error => {                
+                this.datapoolonline = response;
+                return response;
+            }).catch(error => {
                 this.datapoolonline = planBdatapool[0];
                 return planBdatapool;/* show error message */
             });
     }
 
-    public async loadData(){  
-        await this.getConvertedData(); 
+    public async loadData(){
+        await this.getConvertedData();
     }
 
 
