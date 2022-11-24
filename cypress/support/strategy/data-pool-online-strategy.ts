@@ -7,7 +7,7 @@ export class DataPoolOnlineStrategy implements IStrategy{
         return this.datapoolonline.getShortString;
     }
     getLargeString():string {
-        return this.datapoolonline.getShortString;
+        return this.datapoolonline.getLargeString;
     }
     getUserName():string {
         return this.datapoolonline.getUserName;
@@ -33,13 +33,11 @@ export class DataPoolOnlineStrategy implements IStrategy{
             method: 'GET',
         }).then((response) => response.json()).then((response) => {
                 //return response as ConversionData; // Cast the response type to our interface
-                if (!response.ok) {
-                    throw new Error(response.statusText)
-                  }
                 this.datapoolonline = response;
                 return response;
             }).catch(error => {
                 this.datapoolonline = planBdatapool[0];
+                console.log(error)
                 return planBdatapool;/* show error message */
             });
     }
@@ -47,6 +45,4 @@ export class DataPoolOnlineStrategy implements IStrategy{
     public async loadData(){
         await this.getConvertedData();
     }
-
-
 }
