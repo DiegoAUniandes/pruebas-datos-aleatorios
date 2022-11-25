@@ -8,7 +8,7 @@ export class StrategyFactory {
     static async createObject(strategy: number): Promise<IStrategy>{
         switch (strategy) {
             case 1:
-                return new DataPoolAprioriStrategy()
+                return new DataPoolAprioriStrategy(config.testType)
             case 2:
                 let dataPoolOnlineStrategy = new DataPoolOnlineStrategy()
                 await dataPoolOnlineStrategy.loadData()

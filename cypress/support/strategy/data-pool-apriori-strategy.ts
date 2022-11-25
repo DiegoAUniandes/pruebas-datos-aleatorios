@@ -1,14 +1,15 @@
 import { IStrategy } from "./i-strategy";
 
 const successData = require('./datapoolapriori.json');
+const failedData = require('./datapoolapriori.json');
 
 export class DataPoolAprioriStrategy implements IStrategy{
     
     testData!:[]
 
-    constructor(){
+    constructor(testType:boolean){
         let index = this.randomIntFromInterval(successData.length);
-        this.testData = successData[index];
+        this.testData = (testType)? successData[index]: failedData[index];
     }
 
     getShortString():string { 
