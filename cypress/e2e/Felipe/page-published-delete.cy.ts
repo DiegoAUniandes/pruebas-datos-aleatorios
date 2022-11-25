@@ -12,7 +12,6 @@ describe('Borrar Pagina publicada',()=>{
       //Given
       logInPage.doLogIn();
       labsPage.clearAdmin();
-      cy.wait(1000);
       pagesPage.createNewPage(true, "escenario borra publicada");
       cy.url().then((url)=> cy.wrap(url).as('pageUri'));
       pagesPage.checkUserView();
