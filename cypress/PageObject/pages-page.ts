@@ -39,18 +39,18 @@ export class PagesPage{
         this.tagInput = config.pages.tagg.input;
         this.tagSelected = config.pages.tagg.selectorCheck;
         this.screenshotPath = config.pages.screenshotsPath;
+        
+    }
 
+    resolveStrategy(){
         this.strategy.then((response)=>{
             this.titleText = response.getShortString();
             this.contentText =response.getLargeString();
         });
-        
     }
 
     createNewPage(hadPublish, sufix=""){
-        console.log(this.titleText)
         this.titleText = this.titleText+sufix;
-        console.log(this.titleText)       
         cy.visit(this.pagesUrl).then(()=>{
             takeScreenShot();
             this.openEditorView();

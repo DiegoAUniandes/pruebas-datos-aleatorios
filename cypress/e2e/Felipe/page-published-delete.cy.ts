@@ -10,15 +10,16 @@ describe('Borrar Pagina publicada',()=>{
 
     beforeEach(() =>{
       //Given
+      pagesPage.resolveStrategy();
       logInPage.doLogIn();
       labsPage.clearAdmin();
-      pagesPage.createNewPage(true, "escenario borra publicada");
-      cy.url().then((url)=> cy.wrap(url).as('pageUri'));
-      pagesPage.checkUserView();
     })
 
     it('Escenario borrar una pagina',() =>{
+      pagesPage.createNewPage(true, "escenario borra publicada");
+      cy.url().then((url)=> cy.wrap(url).as('pageUri'));
       cy.get('@pageUri').then((pageUri)=>{ 
+        pagesPage.checkUserView();
         pagesPage.validExistence(pageUri,true);
         cy.wait(2000);
         //When

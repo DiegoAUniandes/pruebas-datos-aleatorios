@@ -11,6 +11,7 @@ describe('Borrar Pagina', async ()=>{
 
     beforeEach(() =>{
       //Given
+      pagesPage.resolveStrategy();
       logInPage.doLogIn();
       labsPage.clearAdmin();  
       pagesPage.createNewPage(false, "escenario borra");

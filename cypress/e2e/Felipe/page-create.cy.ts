@@ -11,6 +11,7 @@ describe('Crear Pagina', ()=>{
   beforeEach(() =>{
     //Given
     logInPage.doLogIn();
+    pagesPage.resolveStrategy();
     labsPage.clearAdmin();
   })
 
