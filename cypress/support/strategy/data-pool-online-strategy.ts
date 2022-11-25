@@ -32,14 +32,12 @@ export class DataPoolOnlineStategy implements IStrategy{
         return fetch('https://my.api.mockaroo.com/datapoolonline.json?key=85cd6210', {
             method: 'GET',
         }).then((response) => response.json()).then((response) => {
-                //return response as ConversionData; // Cast the response type to our interface
-                if (!response.ok) {
-                    throw new Error(response.statusText)
-                  }
+                //return response as ConversionData; // Cast the response type to our interface                
                 this.datapoolonline = response;   
                 return response;           
-            }).catch(error => {                
+            }).catch(error => {              
                 this.datapoolonline = planBdatapool[0];
+                console.log(error)
                 return planBdatapool;/* show error message */
             });
     }

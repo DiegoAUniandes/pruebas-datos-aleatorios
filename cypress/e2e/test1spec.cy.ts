@@ -6,7 +6,7 @@ import { StrategyFactory } from "../support/strategy/strategy-factory";
 describe('empty spec', () => {
 
   let strategy: IStrategy;
-  beforeEach(async () => {  
+  before(async () => {  
     strategy = await StrategyFactory.getStrategy();
   })
 

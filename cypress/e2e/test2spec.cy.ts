@@ -8,7 +8,7 @@ require('@cypress/xpath');
 
 describe("Cypress POM Test Suite", function () {
     let strategy: IStrategy;
-    beforeEach(async () => {  
+    before(async () => {  
         strategy = await StrategyFactory.getStrategy();
         cy.log('I run before every test in every spec file!!!!!!');
       })
