@@ -1,5 +1,3 @@
-import takeScreenShot from '../utils/funcs.js';
-
 export class CreatePostPage {
     constructor () {
         this.buttonPosts = "//a[@class='ember-view']"
@@ -18,49 +16,58 @@ export class CreatePostPage {
 
         this.radioButtonSelectSchedulesPost = "//div[@class='gh-publishmenu-radio ']//div[@class='gh-publishmenu-radio-button']"
         this.buttonSchedulesPost = "//span[normalize-space()='Schedule']"
+
+        this.buttonDeletePost = "//span[normalize-space()='Delete post']"
+        this.buttonConfirmDeletePost = "(//span[normalize-space()='Delete'])[1]"
+
+        this.buttonUpdatePost = "//span[normalize-space()='Update']"
+        this.selectUnpublished = "//div[normalize-space()='Unpublished']"
+        this.buttonUnpublished = "//span[normalize-space()='Unpublish']"
     }
 
     createPost = (postTitle, postBody) => {
         cy.xpath(this.buttonPosts).contains("Post").click({force: true})
-        takeScreenShot();  
-        cy.xpath(this.buttonCreatePost).click()
-        takeScreenShot();  
+        cy.xpath(this.buttonCreatePost).click({force: true})
         cy.xpath(this.postTitle).type(postTitle)
         cy.xpath(this.postBody).type(postBody)
-        takeScreenShot();  
     }
 
     publishPost = () => {
         cy.xpath(this.buttonPublish).click()
-        takeScreenShot();  
         cy.xpath(this.buttonPublishNow).click()
-        takeScreenShot();  
+        cy.wait(200)
         cy.xpath(this.buttonReturnPosts).contains("Posts").click()
-        takeScreenShot();  
         cy.xpath(this.buttonCloseNotifyNewPosts).click()
-        takeScreenShot();  
+    }
+
+    unpublishedPost = () => {
+        cy.xpath(this.buttonUpdatePost).click()
+        cy.xpath(this.selectUnpublished).click()
+        cy.xpath(this.buttonUnpublished).click()
+        cy.wait(200)
+        cy.xpath(this.buttonReturnPosts).contains("Posts").click()
     }
 
     createTagFromPost = (tagName) => {
         cy.xpath(this.buttonSetting).click()
-        takeScreenShot();  
         cy.xpath(this.nameTag).type(tagName + '{enter}')
-        takeScreenShot();  
         cy.xpath(this.buttonCloseTag).click()
-        takeScreenShot();  
+        cy.wait(200)
         cy.xpath(this.buttonReturnPosts).contains("Posts").click()
-        takeScreenShot();  
     }
 
     schedulePostPublication = () => {
         cy.xpath(this.buttonPublish).click()
-        takeScreenShot();  
         cy.xpath(this.radioButtonSelectSchedulesPost).click()
-        takeScreenShot();  
         cy.xpath(this.buttonSchedulesPost).click()
-        takeScreenShot();  
+        cy.wait(200)
         cy.xpath(this.buttonReturnPosts).contains("Posts").click()
-        takeScreenShot();  
+    }
+
+    deletePost = () => {
+        cy.xpath(this.buttonSetting).click()
+        cy.xpath(this.buttonDeletePost).click()
+        cy.xpath(this.buttonConfirmDeletePost).click()
     }
 }
 

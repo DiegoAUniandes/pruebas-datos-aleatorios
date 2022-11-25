@@ -31,15 +31,13 @@ export class DataPoolOnlineStrategy implements IStrategy{
     private getConvertedData(): Promise<any> {
         return fetch('https://my.api.mockaroo.com/datapoolonline.json?key=85cd6210', {
             method: 'GET',
-        }).then((response) => response.json()).then((response) => {
-                //return response as ConversionData; // Cast the response type to our interface
-                this.datapoolonline = response;
-                return response;
-            }).catch(error => {
+        }).then((response) => {
+            if(response.ok)
+                this.datapoolonline = response.json();
+            else
                 this.datapoolonline = planBdatapool[0];
-                console.log(error)
-                return planBdatapool;/* show error message */
-            });
+            return response;
+        });
     }
 
     public async loadData(){
