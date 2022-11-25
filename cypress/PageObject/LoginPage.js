@@ -1,5 +1,3 @@
-import takeScreenShot from '../utils/funcs.js';
-
 let config = require('../../config.json');
 
 export class LoginPage {

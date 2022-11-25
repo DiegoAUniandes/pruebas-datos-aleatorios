@@ -1,13 +1,13 @@
 import { IStrategy } from "./i-strategy";
 const planBdatapool = require("./datapoolonline.json");
-export class DataPoolOnlineStategy implements IStrategy{
+export class DataPoolOnlineStrategy implements IStrategy{
     datapoolonline: any = "";
 
-    getShortString():string {         
+    getShortString():string {
         return this.datapoolonline.getShortString;
     }
     getLargeString():string {
-        return this.datapoolonline.getShortString;
+        return this.datapoolonline.getLargeString;
     }
     getUserName():string {
         return this.datapoolonline.getUserName;
@@ -32,19 +32,17 @@ export class DataPoolOnlineStategy implements IStrategy{
         return fetch('https://my.api.mockaroo.com/datapoolonline.json?key=85cd6210', {
             method: 'GET',
         }).then((response) => response.json()).then((response) => {
-                //return response as ConversionData; // Cast the response type to our interface                
-                this.datapoolonline = response;   
-                return response;           
-            }).catch(error => {              
+                //return response as ConversionData; // Cast the response type to our interface
+                this.datapoolonline = response;
+                return response;
+            }).catch(error => {
                 this.datapoolonline = planBdatapool[0];
                 console.log(error)
                 return planBdatapool;/* show error message */
             });
     }
 
-    public async loadData(){  
-        await this.getConvertedData(); 
+    public async loadData(){
+        await this.getConvertedData();
     }
-
-
 }

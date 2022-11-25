@@ -123,11 +123,11 @@ describe("Cypress Edit and publish two pages Test Suite", function () {
         page2.waitForPublish();   
         cy.wait(1000);
         //Then
-        page.navigatePage(namePage1);
+        page.navigatePage(namePage1.replace(" ","-"));
         cy.wait(2000);
         page.validateTitlePagePublished(namePage1);  
         cy.wait(2000);
-        page2.navigatePage(namePage2);
+        page2.navigatePage(namePage2.replace(" ","-"));
         page2.validateTitlePagePublished(namePage2);  
         cy.wait(2000);
     });
@@ -188,7 +188,7 @@ describe("Cypress Edit and publish two pages Test Suite", function () {
         cy.wait(2000);
         page.validateTitlePagePublished(namePage1);  
         cy.wait(2000);
-        page2.navigatePage(namePage2);
+        page2.navigatePage(namePage2.replace(" ","-"));
         page2.validateTitlePagePublished(namePage2);  
         cy.wait(2000);
     });
