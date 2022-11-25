@@ -11,10 +11,9 @@ describe('Borrar Pagina', async ()=>{
 
     beforeEach(() =>{
       //Given
-      pagesPage.resolveStrategy();
       logInPage.doLogIn();
       labsPage.clearAdmin();  
-      pagesPage.createNewPage(false, "escenario borra");
+      pagesPage.createNewPage(false);
       cy.url().then((url)=> cy.wrap(url).as('pageUri'));
     })
 

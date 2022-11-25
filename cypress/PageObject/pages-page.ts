@@ -6,8 +6,7 @@ let config = require('../../config.json');
 
 export class PagesPage{
     
-    private strategy:Promise<IStrategy> = StrategyFactory.getStrategy();
-
+    public strategy:IStrategy;
     public pagesUrl:string;
     public linkHref:string;
     public titlePlaceHolder:string;
@@ -39,18 +38,16 @@ export class PagesPage{
         this.tagInput = config.pages.tagg.input;
         this.tagSelected = config.pages.tagg.selectorCheck;
         this.screenshotPath = config.pages.screenshotsPath;
-        
     }
 
-    resolveStrategy(){
-        this.strategy.then((response)=>{
-            this.titleText = response.getShortString();
-            this.contentText =response.getLargeString();
-        });
+    resolveStrategy(strategy:IStrategy){     
+        console.log("strategy");
+        console.log(strategy);     
+        this.titleText = strategy.getShortString();
+        this.contentText = strategy.getLargeString();
     }
 
-    createNewPage(hadPublish, sufix=""){
-        this.titleText = this.titleText+sufix;
+    createNewPage(hadPublish){
         cy.visit(this.pagesUrl).then(()=>{
             takeScreenShot();
             this.openEditorView();

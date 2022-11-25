@@ -11,14 +11,13 @@ describe('Crear Pagina', ()=>{
   beforeEach(() =>{
     //Given
     logInPage.doLogIn();
-    pagesPage.resolveStrategy();
     labsPage.clearAdmin();
   })
 
 
   it('Escenario crear una pagina', () =>{
     //When
-    pagesPage.createNewPage(false, "escenario crea pagina");
+    pagesPage.createNewPage(false);
     //Then
     cy.url().then((url)=> pagesPage.validExistence(url,true));      
   });
