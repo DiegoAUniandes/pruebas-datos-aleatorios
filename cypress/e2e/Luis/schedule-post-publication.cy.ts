@@ -10,7 +10,7 @@ let config =  require("../../../config.json")
 
 describe('Schedule post publication', () => {
   let strategy: IStrategy;
-  beforeEach(async () => {
+  before(async () => {
     strategy = await StrategyFactory.getStrategy();
   })
 
@@ -21,11 +21,9 @@ describe('Schedule post publication', () => {
     LoginPage.login(config.logIn.userName, config.logIn.userPass)
     LabsPage.clearAdmin()
 
-
     // When
     CreatePostPage.createPost(title, body)
     CreatePostPage.schedulePostPublication()
-
 
     // Then
     PostsPage.validateSchedulePost(title)
@@ -38,11 +36,9 @@ describe('Schedule post publication', () => {
     LoginPage.login(config.logIn.userName, config.logIn.userPass)
     LabsPage.clearAdmin()
 
-
     // When
     CreatePostPage.createPost(title, body)
     CreatePostPage.schedulePostPublication()
-
 
     // Then
     PostsPage.validateSchedulePost(title)

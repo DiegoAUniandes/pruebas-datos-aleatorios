@@ -1,8 +1,8 @@
 import { IStrategy } from "./i-strategy";
 
 export class DataPoolAprioriStrategy implements IStrategy{
-    
-    getShortString():string { 
+
+    getShortString():string {
         return "getShortString";
     }
     getLargeString: () => "getLargeString";
@@ -12,6 +12,4 @@ export class DataPoolAprioriStrategy implements IStrategy{
     getNumber: () => 1
     getTagName: () => "getTagName";
     getNaughtyString: () => "getNaughtyString";
-    
-    
 }

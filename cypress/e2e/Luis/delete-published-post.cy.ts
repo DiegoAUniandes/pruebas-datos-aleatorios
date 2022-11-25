@@ -1,52 +1,51 @@
 import LoginPage from '../../PageObject/LoginPage'
 import CreatePostPage from '../../PageObject/CreatePostPage'
-import TagsPage from '../../PageObject/TagsPage'
 import LabsPage from '../../PageObject/LabsPage'
 import { IStrategy } from '../../support/strategy/i-strategy'
-import { StrategyFactory } from "../../support/strategy/strategy-factory";
+import { StrategyFactory } from "../../support/strategy/strategy-factory"
+import PostsPage from "../../PageObject/PostsPage";
 require('@cypress/xpath')
 let config =  require("../../../config.json")
 
 
-describe('Create tag from post', () => {
+describe('Delete published post', () => {
   let strategy: IStrategy;
-  beforeEach(async () => {
+  before(async () => {
     strategy = await StrategyFactory.getStrategy();
   })
 
-  it('Create and validate tag with correct data', () => {
+  it('Create, publish, delete and validate post with correct data', () => {
     // Given
     let title = strategy.getShortString()
     let body = strategy.getLargeString()
-    let tag = strategy.getTagName()
     LoginPage.login(config.logIn.userName, config.logIn.userPass)
     LabsPage.clearAdmin()
-
-
-    //When
     CreatePostPage.createPost(title, body)
-    CreatePostPage.createTagFromPost(tag)
+    CreatePostPage.publishPost()
 
+    // When
+    PostsPage.enterPost(title)
+    CreatePostPage.deletePost()
 
-    //Then
-    TagsPage.validateTag(tag)
+    // Then
+    PostsPage.validateDeletePost()
   })
 
-  it('Create and validate tag with incorrect data', () => {
+  it('Create, publish, delete and validate post with incorrect data', () => {
     // Given
     let title = strategy.getNaughtyString()
+    let title2 = strategy.getNaughtyString()
     let body = strategy.getNaughtyString()
-    let tag = strategy.getNaughtyString()
     LoginPage.login(config.logIn.userName, config.logIn.userPass)
     LabsPage.clearAdmin()
-
-
-    //When
     CreatePostPage.createPost(title, body)
-    CreatePostPage.createTagFromPost(tag)
+    CreatePostPage.publishPost()
 
+    // When
+    PostsPage.enterPost(title2)
+    CreatePostPage.deletePost()
 
-    //Then
-    TagsPage.validateTag(tag)
+    // Then
+    PostsPage.validateDeletePost()
   })
 })
