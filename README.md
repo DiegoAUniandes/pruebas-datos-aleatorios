@@ -15,7 +15,7 @@ Diego Alejandro Ramírez - da.ramirez55@uniandes.edu.co
 [Estructura del proyecto](#estructura-del-proyecto)<br>
 [Instrucciones para ejecución](#instrucciones-para-ejecución-del-proyecto)<br>
 [Descripción de funcionalidades](#funcionalidades)<br>
-[Descripción de escenarios de pruebas](#escenarios-de-pruebas) <br>
+[Distribución de estrategias y escenarios de pruebas](#estrategias-y-escenarios-de-pruebas) <br>
 [Estrategias de pruebas modificadas](#estrategias-de-pruebas-modificadas)
 
 ## Versiones de software requeridos para la ejecución de los proyectos
@@ -30,16 +30,24 @@ Google Chrome: 107.0.5304.107 (Build oficial) (64 bits) <br>
 Windows: Windows 11 Home Single Language 22H2 64 bits <br>
 
 ## Estructura del proyecto
+Se realiza la construcción de una interfaz, esta nos permite cambiar entre estrategias de una manera rápida, eficiente y totalmente transparente para los escenarios pruebas
+
+En esta instanciamos los métodos bases para todas las estrategias, y cada una de ellas se encarga de llamar o traer los datos aleatorios de donde correspondan para cada una.
+Esta interfaz se encuentra en el directorio `cypress/support/strategy/i-strategy.ts`, al igual que las tres estrategias en los directorios `cypress/support/strategy/data-pool-apriori-strategy.ts`, `cypress/support/strategy/data-pool-online-strategy.ts` y `cypress/support/strategy/online-strategy.ts`. <br>
+
+
+Directorios generales<br>
 ├── cypress <br>
 ├── estrategias-pruebas
 
 ## Instrucciones para ejecución del proyecto
-Dado que la ejecución del proyecto completo para la semana 6 requiere múltiples comandos en diferentes carpetas, se creó un script (`script.py`) en Python que ejecuta por el usuario todos los comandos requeridos.
+Dado que la ejecución del proyecto completo requiere múltiples comandos en diferentes carpetas y cambios de archivos, se creó un script (`script.py`) en Python que ejecuta por el usuario todos los comandos requeridos.
 
 Siga los siguientes pasos para ejecutar el proyecto: <br>
 * Clonar el repositorio con el comando: `https://github.com/DiegoAUniandes/pruebas-datos-aleatorios.git`
 * Navegar a la raíz del repositorio: `cd pruebas-datos-aleatorios`
-* Ejecutar el script de lanzamiento de todas las pruebas del proyecto: `python3 script.py`. Esta ejecución suele tomar algo más de 15 minutos, por favor no cancele el proceso.
+* Ejecutar el script de lanzamiento de todas las pruebas del proyecto: `python3 script.py`. Esta ejecución suele tomar algo más de 10 minutos, por favor no cancele el proceso.
+* Al final de la ejecución de cada estrategia se presentara un reporte dado por `cypress.io` con los resultados de las ejecuciones.
 
 
 ## Funcionalidades
@@ -56,7 +64,7 @@ Siga los siguientes pasos para ejecutar el proyecto: <br>
 | Crear una página    | Esta función crea una página con un título y contenido que son parametrizables                                                                                                    |
 | Publicar una página | Esta función se encarga de publicar una página. Al igual que los posts, las páginas publicadas quedan en estado ‘published’, mientras las no publicadas quedan en estado ‘draft’  |
 
-## Escenarios de pruebas
+## Estrategias y escenarios de pruebas
 Cada uno de los siguientes escenarios combina y prueba diferentes funcionalidades de la herramienta Ghost (en la versión mencionada previamente). 
 En la descripción de cada escenario se indica el objetivo principal de la prueba y el listado de pasos y/o funcionalidades respectivas.
 
