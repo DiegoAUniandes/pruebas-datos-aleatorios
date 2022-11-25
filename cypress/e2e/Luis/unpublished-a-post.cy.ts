@@ -34,7 +34,7 @@ describe('Unpublished a post', () => {
 
   it('Create, publish, unpublished and validate post with incorrect data', () => {
     // Given
-    let title = strategy.getNumber
+    let title = strategy.getNumber()
     let title2 = strategy.getNaughtyString()
     let body = strategy.getNaughtyString()
     LoginPage.login(config.logIn.userName, config.logIn.userPass)
