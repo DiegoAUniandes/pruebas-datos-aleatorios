@@ -1,7 +1,18 @@
-import takeScreenShot from '../utils/funcs.js';
+import takeScreenShot from "../utils/screenshots";
+
 let config = require('../../config.json')
 
 export class LoginPage{
+
+    public logInUrl:string;
+    public usrTag:string;
+    public usrText:string;
+    public pssTag:string;
+    public pssText:string;
+    public actionElement:string;
+    public actionTag:string;
+    public adminUrl:string;
+    public screenshotPath:string;
 
     constructor(){
         this.logInUrl = config.siteHost+config.logIn.logInUrl;

@@ -1,10 +1,11 @@
 {
-    "compilerOptions": {
-      "allowJs": true,
-      "target": "es5",
-      "lib": ["es5", "dom"],
-      "types": ["cypress", "node"]
-    },
-    "include": ["**/*.ts", "PageObject/Utility.js"],
-    "strategy": 2
-  }
+  "compilerOptions": {
+    "allowJs": true,
+    "target": "es5",
+    "lib": ["es5", "dom"],
+    "types": ["cypress", "node"]
+  },
+  "include": ["**/*.ts", "PageObject/Utility.js"],
+  "strategy": 2,
+  "testType":true
+}

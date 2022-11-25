@@ -1,6 +1,7 @@
-import { LoginPage } from '../PageObject/login-page.js';
-import { PagesPage } from '../PageObject/pages-page.js';
-import { LabsPage } from '../PageObject/labs-page.js';
+import { LoginPage } from '../../PageObject/login-page';
+import { PagesPage } from '../../PageObject/pages-page';
+import { LabsPage } from '../../PageObject/labs-page';
+
 
 describe('Crear Pagina', ()=>{
   let logInPage = new LoginPage();

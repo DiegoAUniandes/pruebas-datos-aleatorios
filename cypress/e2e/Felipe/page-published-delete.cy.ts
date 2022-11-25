@@ -1,6 +1,7 @@
-import { LabsPage } from '../PageObject/labs-page.js';
-import { LoginPage } from '../PageObject/login-page.js';
-import { PagesPage } from '../PageObject/pages-page.js';
+import { LabsPage } from "../../PageObject/labs-page";
+import { LoginPage } from "../../PageObject/login-page";
+import { PagesPage } from "../../PageObject/pages-page";
+
 
 describe('Borrar Pagina publicada',()=>{
     let logInPage = new LoginPage();
@@ -11,6 +12,7 @@ describe('Borrar Pagina publicada',()=>{
       //Given
       logInPage.doLogIn();
       labsPage.clearAdmin();
+      cy.wait(1000);
       pagesPage.createNewPage(true, "escenario borra publicada");
       cy.url().then((url)=> cy.wrap(url).as('pageUri'));
       pagesPage.checkUserView();

@@ -1,5 +1,6 @@
-import { LabsPage } from '../PageObject/labs-page.js';
-import { LoginPage } from '../PageObject/login-page.js';
+import { LabsPage } from "../../PageObject/labs-page";
+import { LoginPage } from "../../PageObject/login-page";
+
 
 describe('Escenario borrar info total', async ()=>{
     let logInPage = new LoginPage();

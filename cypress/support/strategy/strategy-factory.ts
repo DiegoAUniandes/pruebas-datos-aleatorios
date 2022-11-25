@@ -5,6 +5,8 @@ import { OnlineStrategy } from "./online-strategy"
 let config = require('../../tsconfig.json')
 
 export class StrategyFactory {
+    constructor(){}
+
     static async createObject(strategy: number): Promise<IStrategy>{
         switch (strategy) {
             case 1:

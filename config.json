@@ -56,7 +56,7 @@
         "pagesListIdentifier":"a[class='ember-view permalink gh-list-data gh-post-list-title']",
         "screenshotsPath":"",
         "creator":{
-            "linkHref":"ghost/#/editor/page/",
+            "linkHref":"#/editor/page/",
             "titlePlaceholder":"Page Title",
             "titleText":"Creando una nueva pagina",
             "contentIdentifier":"[data-placeholder='Begin writing your page...']",

@@ -1,6 +1,7 @@
-import { LabsPage } from '../PageObject/labs-page';
-import { LoginPage } from '../PageObject/login-page';
-import { PagesPage } from '../PageObject/pages-page.js';
+import { LabsPage } from "../../PageObject/labs-page";
+import { LoginPage } from "../../PageObject/login-page";
+import { PagesPage } from "../../PageObject/pages-page";
+
 
 
 describe('Borrar Pagina', async ()=>{

@@ -1,16 +1,35 @@
-import takeScreenShot from '../utils/funcs.js';
+import takeScreenShot from '../utils/screenshots';
+import { StrategyFactory } from '../support/strategy/strategy-factory';
+import { IStrategy } from '../support/strategy/i-strategy';
 
 let config = require('../../config.json');
 
 export class PagesPage{
+    
+    private strategy:Promise<IStrategy> = StrategyFactory.getStrategy();
+
+    public pagesUrl:string;
+    public linkHref:string;
+    public titlePlaceHolder:string;
+    public contentIdent:string;
+    public pagesListIdent:string; 
+    public buttonPageSetting:string;
+    public buttonDeletePage:string;
+    public modalButtonDelete:string;
+    public publishButton:string;
+    public publishConfirm:string;
+    public tagInput:string;
+    public tagSelected:string;
+    public screenshotPath:string; 
+    public titleText:string; 
+    public contentText:string; 
+
 
     constructor(){
         this.pagesUrl = config.siteHost+config.pages.pagesUrl;
-        this.linkHref = config.siteHost+config.pages.creator.linkHref;
+        this.linkHref = config.pages.creator.linkHref;
         this.titlePlaceHolder = config.pages.creator.titlePlaceholder;
-        this.titleText = config.pages.creator.titleText;
         this.contentIdent = config.pages.creator.contentIdentifier;
-        this.contentText = config.pages.creator.contentText;
         this.pagesListIdent = config.pages.pagesListIdentifier;
         this.buttonPageSetting = config.pages.eraser.buttonSetting;
         this.buttonDeletePage = config.pages.eraser.buttonDelete;
@@ -20,10 +39,18 @@ export class PagesPage{
         this.tagInput = config.pages.tagg.input;
         this.tagSelected = config.pages.tagg.selectorCheck;
         this.screenshotPath = config.pages.screenshotsPath;
+
+        this.strategy.then((response)=>{
+            this.titleText = response.getShortString();
+            this.contentText =response.getLargeString();
+        });
+        
     }
 
     createNewPage(hadPublish, sufix=""){
-        this.titleText = this.titleText+sufix;       
+        console.log(this.titleText)
+        this.titleText = this.titleText+sufix;
+        console.log(this.titleText)       
         cy.visit(this.pagesUrl).then(()=>{
             takeScreenShot();
             this.openEditorView();
@@ -34,14 +61,14 @@ export class PagesPage{
 
     openEditorView(){ 
         cy.get('a').filter((index,link)=>{
-            return link.href == this.linkHref;
+            return link.getAttribute('href') == this.linkHref;
         }).first().click();
         takeScreenShot();
     }
 
     fillPageContent(){
         cy.get("textarea").filter((index,area)=>{
-            return area.placeholder == this.titlePlaceHolder;
+            return area.getAttribute("placeholder") == this.titlePlaceHolder;
         }).type(this.titleText);
         cy.get(this.contentIdent).click().type(this.contentText ,{force:true});
         takeScreenShot();
@@ -60,9 +87,9 @@ export class PagesPage{
     validExistence(url, exist, tagName = ""){
         url = url+"/";
         cy.visit(this.pagesUrl).then(async ()=>{
-            if(Cypress.$(this.pagesListIdent).lenght > 0){
+            if(Cypress.$(this.pagesListIdent).length > 0){
                 cy.get(this.pagesListIdent).filter((index,elementLink)=>{
-                    return url == elementLink.href
+                    return url == elementLink.getAttribute("href");
                 }).should('have.length', exist?1:0)
                 .and('contain',tagName);
             }
@@ -95,7 +122,7 @@ export class PagesPage{
 
     checkUserView(){
         let publicPageUrl = config.siteHost+(this.titleText.replaceAll(" ","-"));
-        cy.visit(publicPageUrl, {timeOut:3000}).contains(this.titleText);
+        cy.visit(publicPageUrl).contains(this.titleText);
         takeScreenShot();
     }
 }

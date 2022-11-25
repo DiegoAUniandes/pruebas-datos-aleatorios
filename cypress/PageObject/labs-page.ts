@@ -2,6 +2,11 @@ let config = require('../../config.json')
 
 export class LabsPage{
 
+    public labsUrl:string
+    public clearButton:string
+    public deleteConfirm:string
+    public screenshotsPath:string
+    
     constructor(){
         this.labsUrl = config.siteHost+config.labs.labsUrl;
         this.clearButton = config.labs.cleanButton;
