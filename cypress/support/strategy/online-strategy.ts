@@ -11,17 +11,29 @@ export class OnlineStrategy implements IStrategy{
     }
 
     getShortString():string {
-        return this.shortString;
+        return faker.datatype.string(5);
     }
 
     getLargeString():string {
-        return this.longString;
+        return faker.datatype.string(100);
     }
-    getUserName: () => "getUserName";
-    getUserPassword: () => "getUserPassword";
-    getEmail: () => "getEmail";
-    getNumber: () => 1
-    getTagName: () => "getTagName";
-    getNaughtyString: () => "getNaughtyString";
+    getUserName():string {
+        return faker.datatype.string(10);
+    }
+    getUserPassword():string {
+        return faker.datatype.string(10);
+    }
+    getEmail():string {
+        return faker.datatype.string(10);
+    }
+    getNumber():number {
+        return faker.datatype.number();
+    }
+    getTagName():string {
+        return faker.datatype.string(10);
+    }
+    getNaughtyString():string {
+        return faker.datatype.string(10);
+    }
     
 }
