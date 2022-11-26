@@ -5,7 +5,7 @@ let config = require('../../config.json');
 export class TagPage {
     navigate() {
         cy.visit(config.siteHost+'ghost/#/tags')
-        takeScreenShot();  
+          
     }
 
     elements = {
@@ -28,71 +28,71 @@ export class TagPage {
 
         enterEmail(username) {
             this.elements.usernameField().clear().type(username);
-            takeScreenShot();  
+              
             return this
         }
 
         enterPassword(pswd) {
             this.elements.passwordField().clear().type(pswd);
-            takeScreenShot();  
+              
             return this
         }
         login(){
             this.elements.loginBtn().click();
-            takeScreenShot();  
+              
             return this
         }
 
         createTag(){
             this.elements.createBtn().eq(0).click();
-            takeScreenShot();  
+              
         }
 
         enterNameTag(text) {
             this.elements.nameTagField().clear().type(text, {force: true});
-            takeScreenShot();  
+              
             return this
         }
 
         enterDescriptionPost(text) {
             this.elements.descriptionPostField().clear().type(text);
-            takeScreenShot();  
+              
             return this
         }
 
         selectPublish() {
             this.elements.selectPublish().click();
-            takeScreenShot();  
+              
             return this
         }
 
         save() {
             this.elements.saveBtn().click();
-            takeScreenShot();  
+              
             return this
         }
 
         waitForSaveTag(){            
             cy.xpath("//span[normalize-space()='Save']").should('have.text',"Save");
-            takeScreenShot();  
+              
             return this            
         }
 
         closeWindowPublish(){
             this.elements.closeWindowPublish().click();
-            takeScreenShot();  
+              
             return this
         }
 
         waitForTag(){            
             cy.xpath("//span[normalize-space()='New tag']").should('have.text',"New tag");
-            takeScreenShot();  
+              
             return this            
         }
 
         waitForPublish(){            
             cy.xpath("//button[2]/span").should('have.text',"Update");
-            takeScreenShot();  
+              
             return this            
         }
 
@@ -103,7 +103,7 @@ export class TagPage {
             }
             let namePost = quantity+" post"+moreThanOne;
             this.elements.countTagsByName(name).should('have.text', namePost);
-            takeScreenShot();  
+              
         }
 
         isModifyPost(text){                        
@@ -115,7 +115,7 @@ export class TagPage {
                 }
                 
             })     
-            takeScreenShot();  
+              
             return this;
         }
         uuidv4() {
