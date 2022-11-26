@@ -5,11 +5,11 @@ let config = require('../../config.json');
 export class PostPage {
     navigate() {
         cy.visit(config.siteHost+'ghost/#/posts')
-        takeScreenShot();  
+          
     }
     navigateIndex() {
         cy.visit(config.siteHost)
-        takeScreenShot();  
+          
     }
 
     elements = {
@@ -32,96 +32,96 @@ export class PostPage {
         }
         enterEmail(username) {
             this.elements.usernameField().clear().type(username);
-            takeScreenShot();  
+              
             return this
         }
 
         enterPassword(pswd) {
             this.elements.passwordField().clear().type(pswd);
-            takeScreenShot();  
+              
             return this
         }
         login(){
             this.elements.loginBtn().click();
-            takeScreenShot();  
+              
             return this
         }
 
         createPost(){
             this.elements.createBtn().click();
-            takeScreenShot();  
+              
         }
 
         enterNamePost(text) {
             this.elements.namePostField().clear().type(text);
-            takeScreenShot();  
+              
             return this
         }
 
         enterDescriptionPost(text) {
             this.elements.descriptionPostField().clear().type(text);
-            takeScreenShot();  
+              
             return this
         }
 
         selectPublish() {
             this.elements.selectPublish().click( {force: true});
-            takeScreenShot();  
+              
             return this
         }
 
         publish() {
             this.elements.publishBtn().click({force: true});
-            takeScreenShot();  
+              
             return this
         }
 
         selectSetting(){
             this.elements.selectSetting().click();
-            takeScreenShot();  
+              
             return this            
         }
 
         listTag(){
             this.elements.listTag().eq(0).click();
-            takeScreenShot();  
+              
             return this            
         }
         selectTag(text){
             this.elements.selectFilterTag(text).eq(0).click();
-            takeScreenShot();  
+              
         }
         findPostInFilter(texto){
             this.elements.findPostInFilter().first().contains(texto);
-            takeScreenShot();         
+                     
         }
         closePostSettings(){
             
             this.elements.closePostSettings().click({force: true});
-            takeScreenShot();  
+              
             return this 
         }
 
         listFilterTags(){
             this.elements.listarFilterTag().eq(0).click();
-            takeScreenShot();  
+              
             return this            
         }
         selectFilterTag(text) {
             this.elements.selectFilterTag(text).eq(0).click();
-            takeScreenShot();  
+              
             return this
         }
 
         closeWindowPublish(){
             this.elements.closeWindowPublish().click();
-            takeScreenShot();  
+              
             return this
         }
 
         waitForPublish(){
             cy.xpath("//button[2]/span").should('have.text',"Update");
-            takeScreenShot();  
+              
             return this
         }
 
@@ -134,7 +134,7 @@ export class PostPage {
                 }
                 
             })
-            takeScreenShot();  
+              
             return this;
         }
 }
