@@ -29,13 +29,18 @@ export class DataPoolOnlineStrategy implements IStrategy{
     }
 
     private getConvertedData(): Promise<any> {
+        let status:boolean = false;
         return fetch('https://my.api.mockaroo.com/datapoolonline.json?key=85cd6210', {
             method: 'GET',
-        }).then((response) => response.json()).then((response) => {
-            if(response.ok)
-                this.datapoolonline = response.json();
+        }).then((response) => {  
+            status = response.ok;       
+            return response.json()
+        }).then((response) => {                 
+            if(status)                
+                this.datapoolonline = response;
             else
                 this.datapoolonline = planBdatapool[0];
+            return response;            
         });
     }
 
