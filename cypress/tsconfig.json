@@ -6,6 +6,6 @@
     "types": ["cypress", "node"]
   },
   "include": ["**/*.ts", "PageObject/Utility.js"],
-  "strategy": 2,
+  "strategy": 3,
   "testType":true
 }
