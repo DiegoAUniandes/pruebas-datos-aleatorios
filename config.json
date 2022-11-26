@@ -1,5 +1,5 @@
 {
-    "siteHost":"http://20.102.114.58/",
+    "siteHost":"http://localhost:2368/",
     "logIn":{
         "logInUrl": "ghost/#/signin",
         "userTagIdentifier":"#ember8",
@@ -41,7 +41,7 @@
         "screenshotsPath":"",
         "creator":{
             "linkTitle": "New Tag",
-            "linkHref": "ghost/#/tags/new/",
+            "linkHref": "#/tags/new/",
             "saveButton": "button[class='gh-btn gh-btn-blue gh-btn-icon ember-view']",
             "body":{
                 "tagName":"#tag-name",

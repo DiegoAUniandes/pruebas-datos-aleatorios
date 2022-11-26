@@ -1,11 +1,23 @@
-import takeScreenShot from '../utils/funcs.js';
+import takeScreenShot from "../utils/screenshots";
+
 let config = require('../../config.json');
 
 export class TagPage{
 
+    public tagUrl:string;
+    public linkHref:string;
+    public linkTitle:string;
+    public tagName:string;
+    public tagNameText:string;
+    public tagSlug:string;
+    public tagSlugText:string;
+    public saveButton:string;
+    public tagsListIdentifier:string;
+    public tagGenUrl:string;
+
     constructor(){
         this.tagUrl = config.siteHost + config.tags.tagsUrl;
-        this.linkHref = config.siteHost + config.tags.creator.linkHref;
+        this.linkHref = config.tags.creator.linkHref;
         this.linkTitle = config.tags.creator.linkTitle;
         this.tagName = config.tags.creator.body.tagName;
         this.tagNameText = config.tags.creator.body.tagNameText;
@@ -26,7 +38,7 @@ export class TagPage{
 
     openCreatorView(){ 
         cy.get('a').filter((index,link)=>{
-            return link.href == this.linkHref;
+            return link.getAttribute("href") == this.linkHref;
         }).first().click();
         takeScreenShot();
     }
@@ -42,11 +54,11 @@ export class TagPage{
 
     validExistence(exist){
         cy.url().then(()=>{
-            this.url = this.tagGenUrl + "/";
+            let url = this.tagGenUrl + "/";
             cy.visit(this.tagUrl).then(async ()=>{
-                if(Cypress.$(this.tagsListIdentifier).lenght > 0){
+                if(Cypress.$(this.tagsListIdentifier).length > 0){
                     cy.get(this.tagsListIdentifier).filter((index,elementLink)=>{
-                        return this.url == elementLink.href
+                        return url == elementLink.getAttribute("href")
                     }).should('have.length', exist?1:0);
                 }
             });

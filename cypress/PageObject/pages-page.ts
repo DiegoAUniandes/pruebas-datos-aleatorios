@@ -40,11 +40,19 @@ export class PagesPage{
         this.screenshotPath = config.pages.screenshotsPath;
     }
 
-    resolveStrategy(strategy:IStrategy){     
-        console.log("strategy");
-        console.log(strategy);     
-        this.titleText = strategy.getShortString();
-        this.contentText = strategy.getLargeString();
+    resolveStrategy(strategy:IStrategy, tipo:string){
+        if(tipo == ""){
+            this.titleText = strategy.getShortString();
+            this.contentText = strategy.getLargeString();
+        }
+        if(tipo == "naugthy"){
+            this.titleText = strategy.getNaughtyString();
+            this.contentText = strategy.getNaughtyString();
+        }     
+        if(tipo == "largeString"){
+            this.titleText = strategy.getLargeString();
+            this.contentText = strategy.getLargeString();
+        }     
     }
 
     createNewPage(hadPublish){
@@ -113,7 +121,6 @@ export class PagesPage{
                 cy.get(this.tagSelected).first().click();
                 takeScreenShot();
             });
-            takeScreenShot();
         });
     }
 
