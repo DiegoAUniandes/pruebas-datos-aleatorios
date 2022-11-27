@@ -25,6 +25,8 @@ Python: 3.10 <br>
 Node: 14.20.1 <br>
 npm: 6.14.17 <br>
 xpath: ^2.0.1 <br>
+faker-js: "^7.6.0" <br>
+typescript: "^4.9.3"<br>
 Cypress: ^10.10.0 <br>
 Google Chrome: 107.0.5304.107 (Build oficial) (64 bits) <br>
 Windows: Windows 11 Home Single Language 22H2 64 bits <br>
