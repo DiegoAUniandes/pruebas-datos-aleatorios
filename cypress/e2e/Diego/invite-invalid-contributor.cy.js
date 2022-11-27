@@ -6,7 +6,7 @@ let config = require('../../../config.json');
 describe('Scenario2',()=>{
 
     async function createStrategy() {
-        const strategy = await StrategyFactory.createObject(3);
+        const strategy = await StrategyFactory.getStrategy();
         return strategy;
     }
 
@@ -14,16 +14,14 @@ describe('Scenario2',()=>{
 
     strategy.then((value) => {
 
-        beforeEach(() =>{
+        it ('Invite contributor with invalid email', () => {
             let userText = config.logIn.userName;
             let passText = config.logIn.userPass;
             let loginPage = new LoginPage(userText, passText);
             loginPage.doLogIn();
-          })
 
-        it ('Invite contributor with invalid email', () => {
             let membersPage = new MemberPage();
-            let memberEmail = value.shortString;
+            let memberEmail = value.getShortString();
             let memberRole = 'Contributor';
             membersPage.inviteNewMember(memberEmail, memberRole);
 

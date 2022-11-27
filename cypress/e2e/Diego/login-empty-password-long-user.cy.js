@@ -4,7 +4,7 @@ import { StrategyFactory } from '../../support/strategy/strategy-factory.ts';
 describe('Scenario5',()=>{
 
     async function createStrategy() {
-        const strategy = await StrategyFactory.createObject(3);
+        const strategy = await StrategyFactory.getStrategy();
         return strategy;
     }
 
@@ -12,7 +12,7 @@ describe('Scenario5',()=>{
 
     strategy.then((value) => {
         it ('Login with no password and long username', () => {
-            let userText = value.longString;
+            let userText = value.getLargeString();
             let passText = '';
             let loginPage = new LoginPage(userText, passText);
             loginPage.doFailLogIn();

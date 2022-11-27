@@ -6,7 +6,7 @@ let config = require('../../../config.json');
 describe('Scenario4',()=>{
 
     async function createStrategy() {
-        const strategy = await StrategyFactory.createObject(3);
+        const strategy = await StrategyFactory.getStrategy();
         return strategy;
     }
 
@@ -14,16 +14,14 @@ describe('Scenario4',()=>{
 
     strategy.then((value) => {
 
-        beforeEach(() =>{
+        it ('Invite contributor with long invalid email', () => {
             let userText = config.logIn.userName;
             let passText = config.logIn.userPass;
             let loginPage = new LoginPage(userText, passText);
             loginPage.doLogIn();
-          })
 
-        it ('Invite contributor with long invalid email', () => {
             let membersPage = new MemberPage();
-            let memberEmail = value.longString;
+            let memberEmail = value.getLargeString();
             let memberRole = 'Contributor';
             membersPage.inviteNewMember(memberEmail, memberRole);
 

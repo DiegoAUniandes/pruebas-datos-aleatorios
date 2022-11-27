@@ -4,7 +4,7 @@ import { StrategyFactory } from '../../support/strategy/strategy-factory.ts';
 describe('Scenario6',()=>{
 
     async function createStrategy() {
-        const strategy = await StrategyFactory.createObject(3);
+        const strategy = await StrategyFactory.getStrategy();
         return strategy;
     }
 
@@ -12,7 +12,7 @@ describe('Scenario6',()=>{
 
     strategy.then((value) => {
         it ('Login with no password', () => {
-            let userText = value.shortString;
+            let userText = value.getShortString();
             let passText = '';
             let loginPage = new LoginPage(userText, passText);
             loginPage.doFailLogIn();

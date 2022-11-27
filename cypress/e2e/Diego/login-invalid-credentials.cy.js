@@ -1,10 +1,10 @@
 import { LoginPage } from '../../PageObject/login-page-d.js';
 import { StrategyFactory } from '../../support/strategy/strategy-factory.ts';
 
-describe('Scenario1',()=>{
+describe('Scenario9',()=>{
 
     async function createStrategy() {
-        const strategy = await StrategyFactory.createObject(3);
+        const strategy = await StrategyFactory.getStrategy();
         return strategy;
     }
 
@@ -12,8 +12,8 @@ describe('Scenario1',()=>{
 
     strategy.then((value) => {
         it ('Login with invalid credentials', () => {
-            let userText = value.shortString;
-            let passText = value.shortString;
+            let userText = value.getShortString();
+            let passText = value.getShortString();
             let loginPage = new LoginPage(userText, passText);
             loginPage.doFailLogIn();
         });
