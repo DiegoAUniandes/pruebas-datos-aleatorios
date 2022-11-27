@@ -15,6 +15,7 @@ Diego Alejandro Ramírez - da.ramirez55@uniandes.edu.co
 [Estructura del proyecto](#estructura-del-proyecto)<br>
 [Instrucciones para ejecución](#instrucciones-para-ejecución-del-proyecto)<br>
 [Descripción de funcionalidades](#funcionalidades)<br>
+[Issues encontrados y reportados](#issues)<br>
 [Distribución de estrategias y escenarios de pruebas](#estrategias-y-escenarios-de-pruebas) <br>
 [Estrategias de pruebas modificadas](#estrategias-de-pruebas-modificadas)
 
@@ -25,6 +26,8 @@ Python: 3.10 <br>
 Node: 14.20.1 <br>
 npm: 6.14.17 <br>
 xpath: ^2.0.1 <br>
+faker-js: "^7.6.0" <br>
+typescript: "^4.9.3"<br>
 Cypress: ^10.10.0 <br>
 Google Chrome: 107.0.5304.107 (Build oficial) (64 bits) <br>
 Windows: Windows 11 Home Single Language 22H2 64 bits <br>
@@ -67,10 +70,14 @@ Siga los siguientes pasos para ejecutar el proyecto: <br>
 ## Estrategias y escenarios de pruebas
 Cada uno de los siguientes escenarios combina y prueba diferentes funcionalidades de la herramienta Ghost (en la versión mencionada previamente).
 En la descripción de cada escenario se indica el objetivo principal de la prueba y el listado de pasos y/o funcionalidades respectivas, así como la técnica aplicada en cada uno de ellos.<br>
-[Distribución estrategias y escenarios de pruebas](./estrategias-pruebas/)<br>
+En el siguiente enlace se puede acceder a estas a travez de un excel, se debe descargar el archivo presionando el boton que se indica en la imagen a continuación.
+![](distribucion.png)
+[Distribución estrategias y escenarios de pruebas](./estrategias-pruebas/Distribucion%20de%20estrategias%20y%20escenarios%20de%20pruebas.xlsx)<br>
+
+## Issues
+A continuación se encuentran los issues encontrados y reportadoss: <br>
+[Issues](https://github.com/DiegoAUniandes/pruebas-datos-aleatorios/issues)<br>
 
 ## Estrategias de pruebas modificadas
-Esta semana para las dos estrategias de pruebas se decidió asignar tiempo de los desarrolladores en la construcción y desarrollo del proceso de automatización de VRT.<br>
-Este proceso es relevante puesto que a mediano plazo significará un ahorro de tiempo y recursos importante. Adicionalmente será posible detectar cambios y posibles fallas que una persona probablemente no notaría a nivel visual en una UI. <br>
 A continuación se encuentran los enlaces a las estrategias de pruebas actualizadas: <br>
 [Estrategias de pruebas actualizadas](./estrategias-pruebas/)<br>
