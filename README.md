@@ -33,10 +33,10 @@ Google Chrome: 107.0.5304.107 (Build oficial) (64 bits) <br>
 Windows: Windows 11 Home Single Language 22H2 64 bits <br>
 
 ## Estructura del proyecto
-Se realiza la construcción de una interfaz, esta nos permite cambiar entre estrategias de una manera rápida, eficiente y totalmente transparente para los escenarios pruebas
+Se realiza la construcción de una interfaz la cual permite utilizar el patron factory, permitiendo cambiar entre estrategias de una manera rápida, eficiente y totalmente transparente para los escenarios pruebas propuestos.
 
-En esta instanciamos los métodos bases para todas las estrategias, y cada una de ellas se encarga de llamar o traer los datos aleatorios de donde correspondan para cada una.
-Esta interfaz se encuentra en el directorio `cypress/support/strategy/i-strategy.ts`, al igual que las tres estrategias en los directorios `cypress/support/strategy/data-pool-apriori-strategy.ts`, `cypress/support/strategy/data-pool-online-strategy.ts` y `cypress/support/strategy/online-strategy.ts`. <br>
+A traves de un parametro llamado strategy en el archivo de tsconfig.json, se configura la instancia concreta de la estrategia que se desea utilizar, y cada una de ellas se encarga de llamar o traer los datos aleatorios para cada una de las estrategias.
+Esta interfaz se encuentra en el directorio `cypress/support/strategy/i-strategy.ts`, al igual que las implementaciones concreatas de las tres estrategias que se encuentran en los directorios `cypress/support/strategy/data-pool-apriori-strategy.ts`, `cypress/support/strategy/data-pool-online-strategy.ts` y `cypress/support/strategy/online-strategy.ts`. <br>
 
 
 Directorios generales<br>
