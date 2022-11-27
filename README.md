@@ -15,6 +15,7 @@ Diego Alejandro Ramírez - da.ramirez55@uniandes.edu.co
 [Estructura del proyecto](#estructura-del-proyecto)<br>
 [Instrucciones para ejecución](#instrucciones-para-ejecución-del-proyecto)<br>
 [Descripción de funcionalidades](#funcionalidades)<br>
+[Issues encontrados y reportados](#issues)<br>
 [Distribución de estrategias y escenarios de pruebas](#estrategias-y-escenarios-de-pruebas) <br>
 [Estrategias de pruebas modificadas](#estrategias-de-pruebas-modificadas)
 
@@ -72,6 +73,10 @@ En la descripción de cada escenario se indica el objetivo principal de la prueb
 En el siguiente enlace se puede acceder a estas a travez de un excel, se debe descargar el archivo presionando el boton que se indica en la imagen a continuación.
 ![](distribucion.png)
 [Distribución estrategias y escenarios de pruebas](./estrategias-pruebas/Distribucion%20de%20estrategias%20y%20escenarios%20de%20pruebas.xlsx)<br>
+
+## Issues
+A continuación se encuentran los issues encontrados y reportadoss: <br>
+[Issues](https://github.com/DiegoAUniandes/pruebas-datos-aleatorios/issues)<br>
 
 ## Estrategias de pruebas modificadas
 A continuación se encuentran los enlaces a las estrategias de pruebas actualizadas: <br>
