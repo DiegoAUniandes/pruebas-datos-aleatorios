@@ -48,7 +48,7 @@ Dado que la ejecución del proyecto completo requiere múltiples comandos en dif
 Siga los siguientes pasos para ejecutar el proyecto: <br>
 * Clonar el repositorio con el comando: `https://github.com/DiegoAUniandes/pruebas-datos-aleatorios.git`
 * Navegar a la raíz del repositorio: `cd pruebas-datos-aleatorios`
-* Ejecutar el script de lanzamiento de todas las pruebas del proyecto: `python3 script.py`. Esta ejecución suele tardar 20 minutos por estrategia, se estima que la ejecución total tarde 1 hora(Este tiempo puede variar de acuerdo a las caracteristicas de la maquina en la que se ejecuta.), por favor no cancele el proceso.
+* Ejecutar el script de lanzamiento de todas las pruebas del proyecto: `python3 script.py`. Esta ejecución suele tardar 30 minutos por estrategia, se estima que la ejecución total tarde 1 hora y 30 minutos(Este tiempo puede variar de acuerdo a las caracteristicas de la maquina en la que se ejecuta.), por favor no cancele el proceso.
 * Al final de la ejecución de cada estrategia se presentara un reporte dado por `cypress.io` con los resultados de las ejecuciones.
 
 ## Estrategias y escenarios de pruebas
