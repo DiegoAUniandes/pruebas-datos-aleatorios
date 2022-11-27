@@ -67,10 +67,10 @@ Siga los siguientes pasos para ejecutar el proyecto: <br>
 ## Estrategias y escenarios de pruebas
 Cada uno de los siguientes escenarios combina y prueba diferentes funcionalidades de la herramienta Ghost (en la versión mencionada previamente).
 En la descripción de cada escenario se indica el objetivo principal de la prueba y el listado de pasos y/o funcionalidades respectivas, así como la técnica aplicada en cada uno de ellos.<br>
-[Distribución estrategias y escenarios de pruebas](./estrategias-pruebas/)<br>
+En el siguiente enlace se puede acceder a estas a travez de un excel, se debe descargar el archivo presionando el boton que se indica en la imagen a continuación.
+![](distribucion.png)
+[Distribución estrategias y escenarios de pruebas](./estrategias-pruebas/Distribucion%20de%20estrategias%20y%20escenarios%20de%20pruebas.xlsx)<br>
 
 ## Estrategias de pruebas modificadas
-Esta semana para las dos estrategias de pruebas se decidió asignar tiempo de los desarrolladores en la construcción y desarrollo del proceso de automatización de VRT.<br>
-Este proceso es relevante puesto que a mediano plazo significará un ahorro de tiempo y recursos importante. Adicionalmente será posible detectar cambios y posibles fallas que una persona probablemente no notaría a nivel visual en una UI. <br>
 A continuación se encuentran los enlaces a las estrategias de pruebas actualizadas: <br>
 [Estrategias de pruebas actualizadas](./estrategias-pruebas/)<br>
