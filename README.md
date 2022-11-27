@@ -14,7 +14,6 @@ Diego Alejandro Ramírez - da.ramirez55@uniandes.edu.co
 [Versiones de software requeridas](#versiones-de-software-requeridos-para-la-ejecución-de-los-proyectos)<br>
 [Estructura del proyecto](#estructura-del-proyecto)<br>
 [Instrucciones para ejecución](#instrucciones-para-ejecución-del-proyecto)<br>
-[Descripción de funcionalidades](#funcionalidades)<br>
 [Issues encontrados y reportados](#issues)<br>
 [Distribución de estrategias y escenarios de pruebas](#estrategias-y-escenarios-de-pruebas) <br>
 [Estrategias de pruebas modificadas](#estrategias-de-pruebas-modificadas)
@@ -26,8 +25,8 @@ Python: 3.10 <br>
 Node: 14.20.1 <br>
 npm: 6.14.17 <br>
 xpath: ^2.0.1 <br>
-faker-js: "^7.6.0" <br>
-typescript: "^4.9.3"<br>
+faker-js: ^7.6.0 <br>
+typescript: ^4.9.3<br>
 Cypress: ^10.10.0 <br>
 Google Chrome: 107.0.5304.107 (Build oficial) (64 bits) <br>
 Windows: Windows 11 Home Single Language 22H2 64 bits <br>
@@ -51,21 +50,6 @@ Siga los siguientes pasos para ejecutar el proyecto: <br>
 * Navegar a la raíz del repositorio: `cd pruebas-datos-aleatorios`
 * Ejecutar el script de lanzamiento de todas las pruebas del proyecto: `python3 script.py`. Esta ejecución suele tardar 20 minutos por estrategia, se estima que la ejecución total tarde 1 hora(Este tiempo puede variar de acuerdo a las caracteristicas de la maquina en la que se ejecuta.), por favor no cancele el proceso.
 * Al final de la ejecución de cada estrategia se presentara un reporte dado por `cypress.io` con los resultados de las ejecuciones.
-
-
-## Funcionalidades
-
-| Funcionalidad       | Descripción                                                                                                                                                                       |
-|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Hacer log-in        | Como punto de partida para todas las pruebas E2E de Ghost es importante hacer log-in en el portal de administrador. Esta funcionalidad se encarga de realizar dicho proceso.      |
-| Crear un post       | Esta función permite la creación de un post. La invocación de esta múltiples veces permite crear varios posts. Adicionalmente, se parametrizó el nombre y contenido de los posts. |
-| Editar un post      | Esta función permite modificar el contenido de un post específico                                                                                                                 |
-| Publicar un post    | Esta función publica un post. Es importante mencionar que un post sin publicar queda en estado ‘draft’, mientras que un post publicado queda en estado ‘published’                |
-| Borrar un post      | Esta función borra un post. No tiene en cuenta el estado del post a borrar                                                                                                        |
-| Crear un tag        | Esta función crea un tag.                                                                                                                                                         |
-| Asociar un tag      | Esta función permite asociar un tag dos tipos de recursos diferentes: posts y páginas. A nivel de código son funciones independientes, pero como funcionalidad es la misma.       |
-| Crear una página    | Esta función crea una página con un título y contenido que son parametrizables                                                                                                    |
-| Publicar una página | Esta función se encarga de publicar una página. Al igual que los posts, las páginas publicadas quedan en estado ‘published’, mientras las no publicadas quedan en estado ‘draft’  |
 
 ## Estrategias y escenarios de pruebas
 Cada uno de los siguientes escenarios combina y prueba diferentes funcionalidades de la herramienta Ghost (en la versión mencionada previamente).
